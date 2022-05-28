@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clima App</title>
-    <link rel="shorcut icon" href="./img/favicon.png">
+    <link rel="shorcut icon" href="./img/favicon-16x16.png">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="/css/pages/add-city.css">
@@ -14,6 +14,7 @@
 <body>
     <header>
         <h1>
+            <img src="/img/favicon.png" alt="Imagen del clima" class="Clima-img">
             <span>Clima App</span>
         </h1>
         <nav>
@@ -31,9 +32,13 @@
             <div class="card">
                 <label for="agregarciudad"><b>Ingrese la ciudad a agregar:</b></label>
                 <input type="text" id="agregarciudad" name="agregarciudad">
-                <br>
                 <button>Agregar</button>
             </div>
+        </section>
+        <section class="mensajes">
+            <p class="mensajes-items">Ciudad agregada con éxito</p>
+            <p class="mensajes-items">Error: La ciudad ingresada no se encuentra en la API o se produjo un error al consultar</p>
+            <p class="mensajes-items">La ciudad Ingresada ya se encuentra almacenada</p>
         </section>
     </main>
     <footer>

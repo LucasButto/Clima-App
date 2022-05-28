@@ -1,0 +1,40 @@
+main section {
+    flex-direction: column;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#agregarciudad {
+    height: 5vh;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 0px 5px;
+    margin: 5px 0;
+}
+
+.mensajes-items {
+    display: flex;
+    height: 7vh;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: #dc3545;
+    border-radius: 15px;
+    margin: 15px auto;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.mensajes-items:first-child {
+    background-color: #28a745;
+}
+
+.mensajes-items:last-child {
+    background-color: #ffc107;
+}

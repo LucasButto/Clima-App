@@ -1,0 +1,21 @@
+.card{
+    width: 32vh;
+    height: 40vh;
+    padding: 3px; 
+    text-align: center;
+    border:1px medium rgb(0, 0, 0);
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px rgb(0, 0, 0);
+}
+.card p{
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+#city-list {
+    height: 6vh;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 0px 5px;
+}
