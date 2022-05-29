@@ -1,0 +1,29 @@
+main section {
+    margin-top: 0;
+}
+
+.info-ayuda {
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+button {
+    width: 10%;
+    height: 5vh;
+    margin: 15px 5px;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}
+
+.mensajes-items {
+    height: 5vh;
+    margin-top: 5vh;
+}

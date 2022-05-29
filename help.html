@@ -29,7 +29,7 @@
     <main>
         <h2>Ayuda Clima App V.1.0</h2>
         <section>
-            <div>
+            <div class="info-ayuda">
                 <p>
                     Esta App te permite consultar el clima de una ciudad en particular utilizando la API de <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a>.
                 </p>
@@ -42,18 +42,17 @@
             <form action="javascript:void(0);">
                 <label for="Nombre"><b>Nombre:</b></label>
                 <input type="text" id="Nombre" name="Nombre">
-                <br>
                 <label for="mail"><b>Email:</b></label>
                 <input type="email" name="email" id="email">
-                <br>
                 <label for="mensaje"><b>Mensaje:</b></label>
-                <textarea name="mensaje" id="mensaje" cols="21" rows="3"></textarea>
-                <br>
-                <button>Limpiar</button>
-                <button>Enviar</button>
+                <textarea name="mensaje" id="mensaje" cols="21" rows="9"></textarea>
             </form>
         </section>
-        <p>Ingrese un Email válido</p>
+        <div class="Botones">
+            <button id="limpiar">Limpiar</button>
+            <button id="enviar">Enviar</button>
+        </div>
+        <p class="mensajes-items">Ingrese un Email válido</p>
     </main>
     <footer>
         <p>
