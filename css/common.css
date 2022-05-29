@@ -119,6 +119,7 @@ button {
     background-color: #00594c;
     font-size: 15px;
     color: rgb(255, 255, 255);
+    border: none;
 }
 
 .mensajes-items {
