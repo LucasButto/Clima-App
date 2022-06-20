@@ -113,8 +113,8 @@ main section {
 }
 
 button {
-    height: 6vh;
-    width: 15vh;
+    height: 42px;
+    width: 110px;
     border-radius: 10px;
     background-color: #00594c;
     font-size: 15px;
@@ -122,10 +122,10 @@ button {
     border: none;
 }
 
-.mensajes-items {
+.mensajes {
     display: flex;
-    height: 7vh;
-    width: 50%;
+    height: 50px;
+    width: 400px;
     justify-content: center;
     align-items: center;
     background-color: #dc3545;
@@ -136,6 +136,10 @@ button {
     font-size: 12px;
     padding: 10px;
 }
+
+.mensajes p {
+    margin: 0;
+}	
 
 /* ------------------------------ FOOTER ------------------------------ */
 

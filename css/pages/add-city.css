@@ -16,10 +16,10 @@ main section {
     margin: 5px 0;
 }
 
-.mensajes-items:first-child {
+.exito {
     background-color: #28a745;
 }
 
-.mensajes-items:last-child {
+.warning {
     background-color: #ffc107;
 }
