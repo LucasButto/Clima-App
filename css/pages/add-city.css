@@ -9,17 +9,9 @@ main section {
 }
 
 #agregarciudad {
-    height: 5vh;
+    height: 35px;
     font-size: 16px;
     border-radius: 8px;
     padding: 0px 5px;
     margin: 5px 0;
-}
-
-.exito {
-    background-color: #28a745;
-}
-
-.warning {
-    background-color: #ffc107;
 }
