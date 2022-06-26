@@ -10,8 +10,7 @@ function getCitiesFromLocalStorage() {
 }
 
 function consultAPI(cityName) {
-    let apiKey = "6cfae99f0e3ec73740b84a68b52d0398"
-    return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=es`)
+    return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=2c405c01826f37c50c9e4ef65e6e442d&units=metric&lang=es`)
         .then(response => {
             if (response.ok) return response.json();
             throw new Error("error")
@@ -25,22 +24,22 @@ function consultAPI(cityName) {
 }
 
 function showWeather(data) {
-    let city = data.name;
-    let icon = data.weather[0].icon;
+    let ciudad = data.name;
+    let icono = data.weather[0].icon;
     let temp = data.main.temp;
-    let feelsLike = data.main.feels_like;
-    let humidity = data.main.humidity;
-    let wind = data.wind.speed;
-    let pressure = data.main.pressure;
+    let sensaciontermica = data.main.feels_like;
+    let humedad = data.main.humidity;
+    let viento = data.wind.speed;
+    let presion = data.main.pressure;
 
     let card = `<div class="card">
-                    <h3>${city}</h3>
-                    <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Imagen">
+                    <h3>${ciudad}</h3>
+                    <img src="http://openweathermap.org/img/wn/${icono}.png" alt="Imagen del clima">
                     <p>Temperatura: ${temp}°</p>
-                    <p>Sensación Térmica: ${feelsLike}°</p>
-                    <p>Humedad: ${humidity}%</p>
-                    <p>Velocidad del Viento: ${wind}km/h</p>
-                    <p>Presión: ${pressure} P</p>
+                    <p>Sensación Térmica: ${sensaciontermica}°</p>
+                    <p>Humedad: ${humedad}%</p>
+                    <p>Velocidad del Viento: ${viento} km/h</p>
+                    <p>Presión: ${presion} P</p>
                 </div>`
 
     let section = document.getElementById("section-weather-result");

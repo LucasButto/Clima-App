@@ -15,10 +15,16 @@ async function validateCity(newCity) {
     };
 }
 
+function removeSpinner() {
+    setTimeout(function() {
+        document.querySelector('.spinner').style.display = 'none';
+    },3000)
+}
+
 function removeMessage() {
     setTimeout(function() {
         document.getElementsByClassName("mensajes")[0].remove();
-    }, 3000);
+    }, 10000);
 }
 
 async function addCityToLocalStorage() {
@@ -30,14 +36,20 @@ async function addCityToLocalStorage() {
         case "success":
             cities.push(newCity);
             localStorage.setItem("CITIES", JSON.stringify(cities));
+            document.querySelector('.spinner').style.display = 'block';
+            removeSpinner();
             document.getElementById("messajeBox").innerHTML += successMessage;
             removeMessage();
             break;
         case "warning":
+            document.querySelector('.spinner').style.display = 'block';
+            removeSpinner();
             document.getElementById("messajeBox").innerHTML += warningMessage;
             removeMessage();
             break;
         case "error":
+            document.querySelector('.spinner').style.display = 'block';
+            removeSpinner();
             document.getElementById("messajeBox").innerHTML += errorMessage;
             removeMessage();
             break;
