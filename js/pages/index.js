@@ -21,9 +21,6 @@ function removeSpinner() {
 }
 
 function createCard() {
-    setTimeout(function() {
-        document.querySelector('.card').style.display = 'none';
-    },0.1)
     
     document.querySelector('.spinner').style.display = 'block';
     removeSpinner();
@@ -32,6 +29,7 @@ function createCard() {
         document.querySelector('.card').style.display = 'block';
     },0.1)
     consultAPI(selector.value);
+    document.querySelector('.card').style.display = 'none';
 }
 
 let consultButton = document.getElementById("consultWeather");
