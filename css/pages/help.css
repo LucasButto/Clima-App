@@ -22,8 +22,6 @@ textarea {
 }
 
 button {
-    width: 10%;
-    height: 5vh;
     margin: 15px 5px;
 }
 
@@ -33,6 +31,7 @@ div {
 }
 
 .mensajes {
+    display: none;
     height: 5vh;
     margin-top: 5vh;
 }

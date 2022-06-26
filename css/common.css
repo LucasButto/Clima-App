@@ -127,6 +127,14 @@ button {
     border: none;
 }
 
+button:hover {
+    background-color: #04957d;
+}
+
+button:active {
+    cursor: progress;
+}
+
 .mensajes {
     display: flex;
     height: 50px;
@@ -139,6 +147,42 @@ button {
     color: white;
     font-size: 12px;
     padding: 10px;
+    animation-duration: 10.1s;
+    animation-name: aparicion;
+}
+
+@keyframes aparicion {
+    0% {
+        height: 0;
+        width: 0;
+        font-size: 0;
+        opacity: 0;
+    }
+    30% {
+        height: 0;
+        width: 0;
+        font-size: 0;
+        opacity: 0;
+    }
+    40% {
+        height: 50px;
+        width: 400px;
+        font-size: 12px;
+        opacity: 100;
+    }
+    90% {
+        height: 50px;
+        width: 400px;
+        font-size: 12px;
+        opacity:100;
+    }
+    100% {
+        height: 0;
+        width: 0;
+        font-size: 0;
+        opacity: 0;
+    }
+    
 }
 
 .success {
@@ -157,6 +201,29 @@ button {
     margin: 0;
 }
 
+select:invalid{
+    color: rgb(126, 126, 126);
+}
+
+.spinner {
+    display: none;
+    border: 4px solid rgba(0, 0, 0, .3);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-left-color: #00594c;
+    animation: spin 1s ease infinite;
+    margin: 50px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 /* ------------------------------ FOOTER ------------------------------ */
 
 footer {

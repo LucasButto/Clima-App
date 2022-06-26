@@ -1,4 +1,5 @@
 .card{
+    display: block;
     width: 225px;
     height: 290px;
     padding: 3px; 
@@ -6,11 +7,33 @@
     border:1px medium rgb(0, 0, 0);
     border-radius: 25px;
     box-shadow: 5px 5px 25px rgb(0, 0, 0);
+    background-color: rgb(233, 233, 233);
+    animation-duration: 10s;
+    animation-name: opacidad;
 }
+
+@keyframes opacidad {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 100;
+    }
+}
+
 .card p{
     font-weight: bold;
     margin-bottom: 5px;
-    font-size: 12px;
+    font-size: 13px;
+}
+
+.card img {
+    width: 70px;
+    background: linear-gradient(to right, #00594c, #04957d);
+    border-radius: 50%;
 }
 
 #city-list {
