@@ -15,12 +15,6 @@ async function validateCity(newCity) {
     };
 }
 
-function removeSpinner() {
-    setTimeout(function() {
-        document.querySelector('.spinner').style.display = 'none';
-    },3000)
-}
-
 function removeMessage() {
     setTimeout(function() {
         document.getElementsByClassName("mensajes")[0].remove();
@@ -38,27 +32,22 @@ async function addCityToLocalStorage() {
             localStorage.setItem("CITIES", JSON.stringify(cities));
             document.querySelector('.spinner').style.display = 'block';
             removeSpinner();
-            document.getElementById("messajeBox").innerHTML += successMessage;
+            document.getElementById("messajeBox").innerHTML += '<p class="mensajes success">Ciudad agregada con éxito</p>';
             removeMessage();
             break;
         case "warning":
             document.querySelector('.spinner').style.display = 'block';
             removeSpinner();
-            document.getElementById("messajeBox").innerHTML += warningMessage;
+            document.getElementById("messajeBox").innerHTML += '<p class="mensajes warning">La ciudad ingresada ya se encuentra almacenada</p>';
             removeMessage();
             break;
         case "error":
             document.querySelector('.spinner').style.display = 'block';
             removeSpinner();
-            document.getElementById("messajeBox").innerHTML += errorMessage;
+            document.getElementById("messajeBox").innerHTML += '<p class="mensajes error">Error: La ciudad ingresada no se encuenta en la API o se produjo un error al consultar</p>';
             removeMessage();
             break;
     };
 };
 
-let successMessage = '<p class="mensajes success">Ciudad agregada con éxito</p>';
-let errorMessage = '<p class="mensajes error">Error: La ciudad ingresada no se encuenta en la API o se produjo un error al consultar</p>';
-let warningMessage = '<p class="mensajes warning">La ciudad ingresada ya se encuentra almacenada</p>';
-
-let buttonAddCity = document.getElementById("buttonAdd");
-buttonAddCity.addEventListener("click", addCityToLocalStorage);
+document.getElementById("buttonAdd").addEventListener("click", addCityToLocalStorage);

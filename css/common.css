@@ -40,7 +40,7 @@ header {
     background: var(--color-gradient);
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
-    box-shadow: 0px 3px var(--color-active);
+    box-shadow: 0px 2px var(--color-active);
 }
 
 nav>ul {

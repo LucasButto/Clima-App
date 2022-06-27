@@ -32,7 +32,7 @@
 
 .card img {
     width: 70px;
-    background: linear-gradient(to right, #00594c, #04957d);
+    background: var(--color-gradient);
     border-radius: 50%;
 }
 
