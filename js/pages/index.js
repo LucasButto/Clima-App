@@ -52,7 +52,6 @@ function createCard() {
     document.querySelector('.card').style.display = 'none';
 }
 
-let consultButton = document.getElementById("consultWeather");
-consultButton.addEventListener("click", createCard)
+document.getElementById("consultWeather").addEventListener("click", createCard)
 
 addCitiesToSelector();
