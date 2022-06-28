@@ -26,7 +26,7 @@ function sendMail() {
                 alert(JSON.stringify(err));
             });
         } else {
-            document.getElementById("messajeBox").innerHTML += '<p class="mensajes error">Ingrese un Mail válido</p>';
+            document.getElementById("messajeBox").innerHTML += '<p class="mensajes error">Ingrese un Email válido</p>';
             removeMessage();
             btn.value = 'Enviar';
         };
