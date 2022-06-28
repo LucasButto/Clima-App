@@ -36,9 +36,13 @@
     border-radius: 50%;
 }
 
-#city-list {
+select {
     height: 42px;
     font-size: 16px;
     border-radius: 8px;
     padding: 0px 5px;
+}
+
+select:hover {
+    cursor: pointer;
 }

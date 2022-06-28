@@ -129,6 +129,7 @@ button, .sendForm{
 
 button:hover, .sendForm:hover{
     background-color: #04957d;
+    cursor: pointer;
 }
 
 button:active, #sendForm:active{
