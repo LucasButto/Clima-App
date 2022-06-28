@@ -7,7 +7,7 @@ async function validateCity(newCity) {
         };
     };
 
-    if (await consultAPI(newCity) == "error") {
+    if (await llamarApi(newCity) == "error") {
         return "error";
     }
     else {
@@ -25,21 +25,21 @@ async function addCityToLocalStorage() {
             cities.push(newCity);
             localStorage.setItem("CITIES", JSON.stringify(cities));
             document.querySelector('.spinner').style.display = 'block';
-            removeSpinner();
+            sacarSpinner();
             document.getElementById("messajeBox").innerHTML += '<p class="mensajes success">Ciudad agregada con éxito</p>';
-            removeMessage();
+            sacarMensaje();
             break;
         case "warning":
             document.querySelector('.spinner').style.display = 'block';
-            removeSpinner();
+            sacarSpinner();
             document.getElementById("messajeBox").innerHTML += '<p class="mensajes warning">La ciudad ingresada ya se encuentra almacenada</p>';
-            removeMessage();
+            sacarMensaje();
             break;
         case "error":
             document.querySelector('.spinner').style.display = 'block';
-            removeSpinner();
+            sacarSpinner();
             document.getElementById("messajeBox").innerHTML += '<p class="mensajes error">Error: La ciudad ingresada no se encuenta en la API o se produjo un error al consultar</p>';
-            removeMessage();
+            sacarMensaje();
             break;
     };
 };

@@ -1,6 +1,6 @@
 let selector = document.getElementById("city-list");
 
-function addCitiesToSelector() {
+function agregarCiudadesSelector() {
     let cities = getCitiesFromLocalStorage();
 
     if (cities.length == 0) {
@@ -14,15 +14,15 @@ function addCitiesToSelector() {
     }
 }
 
-function createCard() {
+function crearTarjeta() {
 
     document.querySelector('.spinner').style.display = 'block';
-    removeSpinner();
+    sacarSpinner();
     
-    consultAPI(selector.value);
+    llamarApi(selector.value);
     document.querySelector('.card').style.display = 'none';
 }
 
-document.getElementById("consultWeather").addEventListener("click", createCard)
+document.getElementById("consultWeather").addEventListener("click", crearTarjeta)
 
-addCitiesToSelector();
+agregarCiudadesSelector();

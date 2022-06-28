@@ -1,6 +1,6 @@
 emailjs.init('_dTu7J3vq-AlfVvXa');
 
-function sendMail() {
+function mandarMail() {
     
     document.getElementById('form').addEventListener('submit', function(event) {
         
@@ -11,7 +11,7 @@ function sendMail() {
         btn.value = 'Enviando...';
         
         document.querySelector('.spinner').style.display = 'block';
-        removeSpinner();
+        sacarSpinner();
         
         const serviceID = 'default_service';
         const templateID = 'template_efvt0hx';
@@ -19,7 +19,7 @@ function sendMail() {
         if (validateEmail() == true){
             emailjs.sendForm(serviceID, templateID, this).then(() => {
                 document.getElementById("messajeBox").innerHTML += '<p class="mensajes success">Mensaje enviado con éxito</p>';
-                removeMessage();
+                sacarMensaje();
                 btn.value = 'Enviar';
             }, (err) => {
                 btn.value = 'Enviar';
@@ -27,7 +27,7 @@ function sendMail() {
             });
         } else {
             document.getElementById("messajeBox").innerHTML += '<p class="mensajes error">Ingrese un Email válido</p>';
-            removeMessage();
+            sacarMensaje();
             btn.value = 'Enviar';
         };
     });
@@ -42,7 +42,7 @@ function validateEmail() {
     return esValido
 }
 
-sendMail();
+mandarMail();
 
 async function Limpiar() {
     form.reset();
