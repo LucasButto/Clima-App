@@ -48,4 +48,4 @@ async function Limpiar() {
     form.reset();
 };
 
-document.getElementById("buttonAdd").addEventListener("click", Limpiar);
+document.getElementById("buttonLimpiar").addEventListener("click", Limpiar);
