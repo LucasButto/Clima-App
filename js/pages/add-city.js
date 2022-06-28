@@ -15,12 +15,6 @@ async function validateCity(newCity) {
     };
 }
 
-function removeMessage() {
-    setTimeout(function() {
-        document.getElementsByClassName("mensajes")[0].remove();
-    }, 10000);
-}
-
 async function addCityToLocalStorage() {
     let cities = getCitiesFromLocalStorage();
     let newCity = document.getElementById("agregarciudad").value;

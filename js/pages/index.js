@@ -44,10 +44,7 @@ function createCard() {
 
     document.querySelector('.spinner').style.display = 'block';
     removeSpinner();
-
-    setTimeout(function() {
-        document.querySelector('.card').style.display = 'block';
-    },0.1)
+    
     consultAPI(selector.value);
     document.querySelector('.card').style.display = 'none';
 }

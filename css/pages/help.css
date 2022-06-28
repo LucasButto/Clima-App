@@ -2,36 +2,51 @@ main section {
     margin-top: 0;
 }
 
+.section_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .info-ayuda {
+    display: flex;
+    justify-content: center;
     flex-direction: column;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 310px;
+    text-align: center;
 }
 
-form input {
-    height: 4vh;
-    border-radius: 5px;
+.form_input {
+    border: 1px solid black;
+    border-radius: 5px ;
+}
+
+label {
+    text-align: left;
+    margin-left: 3px;
 }
 
 textarea {
     border-radius: 5px;
+    resize: none;
+}
+
+input[type=submit] {
+    position: absolute;
+    margin: 10px 0 0 -120px;
 }
 
 button {
-    margin: 15px 5px;
+    position: absolute;
+    margin: 310px 0px -76px 140px;
 }
 
-div {
-    display: flex;
-    justify-content: center;
-}
-
-.mensajes {
-    display: none;
-    height: 5vh;
-    margin-top: 5vh;
+input, textarea{
+    text-decoration: none;
+    padding: 5px;
 }
