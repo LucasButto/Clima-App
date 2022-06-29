@@ -9,7 +9,7 @@ function getCitiesFromLocalStorage() {
     return cities;
 }
 
-function llamarApi(cityName) {
+function buscarDatos(cityName) {
     let apiKey = "2c405c01826f37c50c9e4ef65e6e442d"
     return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=es`)
         .then(response => {
@@ -25,25 +25,18 @@ function llamarApi(cityName) {
 }
 
 function mostrarTarjeta(data) {
-    let ciudad = data.name;
-    let icono = data.weather[0].icon;
-    let temp = data.main.temp;
-    let sensaciontermica = data.main.feels_like;
-    let humedad = data.main.humidity;
-    let viento = data.wind.speed;
-    let presion = data.main.pressure;
 
-    let section = document.getElementById("section-weather-result");
-    if (section) {
-        section.innerHTML = "";
-        section.innerHTML += `<div class="card">
-                                <h3>${ciudad}</h3>
-                                <img src="http://openweathermap.org/img/wn/${icono}.png" alt="Imagen del clima">
-                                <p>Temperatura: ${temp}°</p>
-                                <p>Sensación Térmica: ${sensaciontermica}°</p>
-                                <p>Humedad: ${humedad}%</p>
-                                <p>Velocidad del Viento: ${viento} km/h</p>
-                                <p>Presión: ${presion} P</p>
+    if (document.getElementById("section-weather-result")) {
+        document.getElementById("section-weather-result").innerHTML = '';
+        document.getElementById("section-weather-result").innerHTML = 
+                            `<div class="card">
+                                <h3>${data.name}</h3>
+                                <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="Imagen del clima">
+                                <p>Temperatura: ${data.main.temp}°</p>
+                                <p>Sensación Térmica: ${data.main.feels_like}°</p>
+                                <p>Humedad: ${data.main.humidity}%</p>
+                                <p>Velocidad del Viento: ${data.wind.speed} km/h</p>
+                                <p>Presión: ${data.main.pressure} P</p>
                             </div>`;
     }
 }

@@ -19,10 +19,10 @@ function crearTarjeta() {
     document.querySelector('.spinner').style.display = 'block';
     sacarSpinner();
     
-    llamarApi(selector.value);
+    buscarDatos(selector.value);
     document.querySelector('.card').style.display = 'none';
 }
 
-document.getElementById("consultWeather").addEventListener("click", crearTarjeta)
+document.getElementById("consultar").addEventListener("click", crearTarjeta)
 
 agregarCiudadesSelector();

@@ -16,7 +16,7 @@ function mandarMail() {
         const serviceID = 'default_service';
         const templateID = 'template_efvt0hx';
         
-        if (validateEmail() == true){
+        if (validarEmail() == true){
             emailjs.sendForm(serviceID, templateID, this).then(() => {
                 document.getElementById("messajeBox").innerHTML += '<p class="mensajes success">Mensaje enviado con éxito</p>';
                 sacarMensaje();
@@ -33,7 +33,7 @@ function mandarMail() {
     });
 };
 
-function validateEmail() {
+function validarEmail() {
     let validEmail = document.getElementById('user_email').value;
 
     var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
