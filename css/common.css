@@ -149,7 +149,7 @@ button:active, #sendForm:active{
     font-size: 12px;
     padding: 10px;
     background-color: #00594c;
-    animation-duration: 10.1s;
+    animation-duration: 5.1s;
     animation-name: aparicion;
 }
 
@@ -160,19 +160,13 @@ button:active, #sendForm:active{
         font-size: 0;
         opacity: 0;
     }
-    30% {
-        height: 0;
-        width: 0;
-        font-size: 0;
-        opacity: 0;
-    }
-    40% {
+    20% {
         height: 50px;
         width: 400px;
         font-size: 12px;
         opacity: 100;
     }
-    90% {
+    80% {
         height: 50px;
         width: 400px;
         font-size: 12px;

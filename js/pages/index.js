@@ -3,7 +3,7 @@ let selector = document.getElementById("city-list");
 function agregarCiudadesSelector() {
     let cities = getCitiesFromLocalStorage();
 
-    if (cities.length == 0) {
+    if (cities === []) {
         selector.innerHTML += `<option value="noCities" disabled selected>No hay ciudades agregadas</option>`
     }
     else {
@@ -17,9 +17,9 @@ function agregarCiudadesSelector() {
 function crearTarjeta() {
 
     document.querySelector('.spinner').style.display = 'block';
-    sacarSpinner();
     
     buscarDatos(selector.value);
+    
     document.querySelector('.card').style.display = 'none';
 }
 
