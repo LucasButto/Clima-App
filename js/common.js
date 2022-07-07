@@ -9,6 +9,46 @@ function getCitiesFromLocalStorage() {
     return cities;
 }
 
+function cargarCiudad() {
+    let cities = getCitiesFromLocalStorage();
+    let ciudad = document.getElementById("agregarciudad").value.toUpperCase();
+    let apiKey = "2c405c01826f37c50c9e4ef65e6e442d"
+    let state;
+
+  $.getJSON(
+    `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang=es`,
+    function () {
+        
+        for (let i = 0; i < cities.length; i++) {
+            if (ciudad == cities[i]) {
+                state = "warning"
+            }
+          }
+
+        if(state == "warning"){
+            sacarSpinner();
+                document.getElementById("messajeBox").innerHTML +=
+                  '<p class="mensajes warning">La ciudad ingresada ya se encuentra almacenada</p>';
+                sacarMensaje();
+        } else {
+            cities.push(ciudad);
+            localStorage.setItem("CITIES", JSON.stringify(cities));
+            sacarSpinner();
+        
+            document.getElementById("messajeBox").innerHTML +=
+            '<p class="mensajes success">Ciudad agregada con éxito</p>';
+            sacarMensaje();
+        };
+    }
+  ).fail(function () {
+    sacarSpinner();
+        document.getElementById("messajeBox").innerHTML +=
+          '<p class="mensajes error">Error: La ciudad ingresada no se encuenta en la API o se produjo un error al consultar</p>';
+    sacarMensaje();
+  });
+ 
+}
+
 function buscarDatos(cityName) {
     let apiKey = "2c405c01826f37c50c9e4ef65e6e442d"
     return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=es`)
@@ -26,7 +66,6 @@ function buscarDatos(cityName) {
             return "error"
         });
 }
-
 function mostrarTarjeta(data) {
 
     if (document.getElementById("section-weather-result")) {
