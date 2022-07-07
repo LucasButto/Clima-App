@@ -43,9 +43,3 @@ function validarEmail() {
 }
 
 mandarMail();
-
-async function Limpiar() {
-    form.reset();
-};
-
-document.getElementById("buttonLimpiar").addEventListener("click", Limpiar);
