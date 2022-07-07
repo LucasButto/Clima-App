@@ -15,6 +15,8 @@ function cargarCiudad() {
     let apiKey = "2c405c01826f37c50c9e4ef65e6e442d"
     let state;
 
+    document.querySelector('.spinner').style.display = 'block';
+
   $.getJSON(
     `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang=es`,
     function () {
@@ -54,12 +56,12 @@ function buscarDatos(cityName) {
     return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=es`)
         .then(response => {
             if (response.ok) {
-                sacarSpinner();
                 return response.json();
             }
             throw new Error("error")
         })
         .then(data => {
+            sacarSpinner();
             mostrarTarjeta(data);
         })
         .catch(error => {
