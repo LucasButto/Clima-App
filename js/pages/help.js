@@ -4,20 +4,21 @@ function mandarMail() {
     
     document.getElementById('form').addEventListener('submit', function(event) {
         
+        document.querySelector('.spinner').style.display = 'block';
         const btn = document.getElementById('sendData');
         
         event.preventDefault();
         
         btn.value = 'Enviando...';
         
-        document.querySelector('.spinner').style.display = 'block';
-        sacarSpinner();
+        
         
         const serviceID = 'default_service';
         const templateID = 'template_efvt0hx';
         
         if (validarEmail() == true){
             emailjs.sendForm(serviceID, templateID, this).then(() => {
+                sacarSpinner();
                 document.getElementById("messajeBox").innerHTML += '<p class="mensajes success">Mensaje enviado con éxito</p>';
                 sacarMensaje();
                 btn.value = 'Enviar';
@@ -26,10 +27,12 @@ function mandarMail() {
                 alert(JSON.stringify(err));
             });
         } else {
+            sacarSpinner();
             document.getElementById("messajeBox").innerHTML += '<p class="mensajes error">Ingrese un Email válido</p>';
             sacarMensaje();
             btn.value = 'Enviar';
         };
+        
     });
 };
 
@@ -43,9 +46,3 @@ function validarEmail() {
 }
 
 mandarMail();
-
-async function Limpiar() {
-    form.reset();
-};
-
-document.getElementById("buttonLimpiar").addEventListener("click", Limpiar);
