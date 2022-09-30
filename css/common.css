@@ -223,18 +223,27 @@ select:invalid{
 /* ------------------------------ FOOTER ------------------------------ */
 
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     bottom: 0px;
     background: var(--color-gradient);
     width: 100%;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 footer p {
     font-size: small;
     color: white;
+}
+
+img {
+    width: 20px;
+}
+
+#github-link:visited {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
 }
 
 /* Media Query: Estilos a aplicar sólo en pantallas mayores a 400px */
