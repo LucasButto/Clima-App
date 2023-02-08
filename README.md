@@ -26,5 +26,5 @@ This project uses the OpenWeatherMap API to get weather information. To use this
 ## Screenshot
 
 <p align="center">
-  <img src="./img/proj.jpg" width="250" height="200">
+  <img src="./img/proj.jpg" width="600" height="400">
 </p>
