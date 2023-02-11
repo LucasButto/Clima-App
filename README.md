@@ -16,7 +16,7 @@ To install this project, simply clone the repository and open the index.html fil
 ## Usage
 
 1. Open the index.html file in your preferred browser.
-2. Enter a city or zip code in the search box.
+2. Enter a city in the search box.
 3. Click the "Search" button to view the current weather information.
 
 ## API Key
